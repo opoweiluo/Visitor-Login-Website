@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+      <title>Visitor List</title>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   </head>
+   <body>
+      <h1>Visitor List</h1>
+
+      <table class="table table-sm">
+         <thead class="thead-dark">
+            <tr>
+               <th scope="col">Visitor Name</th>
+               <th scope="col">Email Address</th>
+               <th scope="col">Phone Number</th>
+               <th scope="col">Host Name</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for visitor in visitors %}
+               <tr>
+                  <td>{{ visitor.username }}</td>
+                  <td>{{ visitor.email }}</td>
+                  <td>{{ visitor.phone }}</td>
+                  <td>{{ visitor.hostname }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   <button class="btn btn-info" onclick="window.location.href = '{{ url_for('getcsv') }}';">Download CSV file</button>
+   <button class="btn btn-info" onclick="window.location.href = '{{ url_for('xlsx_export') }}';">Download Excel file</button>
+   <button class="btn btn-primary" onclick="window.history.back()">Go Back</button>
+   </body>
+</html>
