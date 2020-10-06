@@ -5,3 +5,8 @@ This visitor login website is for visitors to register at the front desk.  They 
 
 The visitor website has ability to view the list of all visitors’ information and to download visitors’ information as an excel file or a csv file. 
 
+*Initialize the database by Python Shell Command:*    
+```python
+from model import db
+db.create_all()
+
